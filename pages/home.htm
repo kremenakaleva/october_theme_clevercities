@@ -1,0 +1,30 @@
+url = "/"
+layout = "default"
+title = "CLEVER Cities"
+is_hidden = 0
+meta_description = "homepage desc"
+seo_keywords = "keywords"
+robot_index = "index"
+robot_follow = "follow"
+
+[jumbotron intro]
+jumbotron = "homepage-intro-text"
+background = "transperant"
+templates = "template1"
+description_limit = 0
+
+==
+<div class="container first-child">
+        <div class="row between-md around-xs">
+            <div class="col-md-3 col-xs-12 left_column_content">
+                {% component 'intro' %}
+            </div>
+            <div class="col-md-9 col-xs-12 right_column_content">
+
+            </div>
+        </div>
+</div>
+<div class="homepage_map">{% partial 'homepage_guidance' %}</div>
+
+
+

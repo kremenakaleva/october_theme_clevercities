@@ -1,0 +1,37 @@
+title = "Sitemap"
+layout = "default"
+url = "/sitemap"
+
+[jumbotron intro]
+jumbotron = "homepage-intro-text"
+background = "transperant"
+templates = "template1"
+description_limit = 0
+
+==
+<?php
+
+function onStart()
+{
+    $this['record'] = BenFreke\MenuManager\Models\Menu::where('id', '=', '1')->first();
+}
+
+?>
+==
+
+<div class="container first-child">
+    <div class="row between-md around-xs">
+        <div class="col-md-3 col-xs-12 left_column_content">
+            {% component 'intro' %}
+        </div>
+        <div class="col-md-9 col-xs-12 right_column_content">
+            <ul class="sitemap">
+            {% for page in record.getAllChildren() %}
+                {% if not page.is_external %}
+            <li class="level_{{page.level}}"><a href="/{{page.url}}">{{page.title}}</a></li>
+                {% endif %}
+            {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+url = "/collaboration-empowerment"
+layout = "default"
+title = "Collaboration & empowerment"
+
+[siteSearchInclude]
+
+[menu submenu]
+start = "id-9"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 1
+==
+{% component 'siteSearchInclude' %}
+<div class="container first-child">
+        <div class="row between-md around-xs">
+            <div class="col-md-3 col-xs-12 left_column_content blue">
+                {% component 'submenu' %}
+            </div>
+            <div class="col-md-9 col-xs-12 right_column_content">
+                {% partial 'collaboration_empowerment' %}
+            </div>
+        </div>
+</div>

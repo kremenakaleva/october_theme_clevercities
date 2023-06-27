@@ -1,0 +1,92 @@
+[cookieConsent]
+message = "This website uses cookies to ensure you get the best experience on our website."
+dismiss = "Got it!"
+learnMore = "More info"
+link = "/privacy-policy"
+theme = "dark-bottom"
+
+[jumbotron footer]
+jumbotron = "footer-funds-text"
+background = "transperant"
+templates = "template1"
+description_limit = 0
+
+[jumbotron jumbotron2]
+jumbotron = "footer-intro-text"
+background = "transperant"
+templates = "template1"
+description_limit = 0
+
+[menu]
+start = "id-16"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 2
+==
+{% component 'cookieConsent' %}
+<div class="container-fluid border-box dark-background">
+	<div class="footer-container">
+        <div class="row middle-xs between-md around-xs">
+            <div class="col-md-2 col-xs-12 start-md center-xs"><img src="{{'logo_white.svg'|media}}"></div>
+            <div class="col-md-10 col-xs-12 start-md center-xs">
+                {% component 'jumbotron2' %}
+            </div>
+        </div>
+
+        <div class="row middle-xs between-md around-xs">
+            <div class="col-md-6 col-xs-12 start-md center-xs">
+                 {% component 'menu' %}
+            </div>
+            <div class="col-md-6 col-xs-12 end-md center-xs">
+                <div class="social-networks">
+                    <div class="icons">
+                        {% if enable_facebook and facebook_url %}
+                        <a href="{{facebook_url}}" target="_blank" class="pr p-secondary p-facebook big" target="_blank"></a>
+                        {% endif %}
+                        {% if enable_twitter and twitter_url %}
+                        <a href="{{twitter_url}}" target="_blank" class="pr p-secondary p-twitter big" target="_blank"></a>
+                        {% endif %}
+                        {% if enable_linkedin and linkedin_url %}
+                        <a  href="{{linkedin_url}}" target="_blank" class="pr p-secondary p-linkedin big" target="_blank"></a>
+                        {% endif %}
+                        {% if enable_youtube and youtube_url %}
+                        <a  href="{{youtube_url}}" target="_blank" class="pr p-secondary p-youtube big" target="_blank"></a>
+                        {% endif %}
+                        {% if enable_instagram and instagram_url %}
+                        <a  href="{{instagram_url}}" target="_blank" class="pr p-secondary p-instagram big" target="_blank"></a>
+                        {% endif %}
+                        {% if enable_flickr and flickr_url %}
+                        <a  href="{{flickr_url}}" target="_blank" class="pr p-secondary p-flickr normal" target="_blank"></a>
+                        {% endif %}
+                        {% if enable_researchgate and researchgate_url %}
+                        <a  href="{{researchgate_url}}" target="_blank" class="pr p-secondary p-researchgate normal" target="_blank"></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row middle-xs between-md around-xs">
+            {% if (footer_funds_flag != null or footer_funds_text != '') %}
+            <div class="funding flex-column my-1 my-lg-0 flex-lg-row px-1 align-items-center col-sm col-xs-12">
+                {% if footer_funds_flag %}
+                <img class="text mr-0 mr-lg-1 ml-lg-1" style="height:50px;" src="{{ footer_funds_flag }}"/>
+                {% endif %}
+                {% if footer_funds_text %}
+                <span class="align-items-center mt-sm-0 mt-1">{% component 'footer' %}</span>
+                {%endif %}
+            </div>
+            {% endif %}
+            <div class="col-lg-1 col-sm-2 col-xs-12 center-xs">&nbsp;</div>
+            <div class="col-lg-3 col-sm-3 col-xs-12 end-sm center-xs">
+                <div class="powered-by center-xs">
+                <span>Designed and powered by <a href="https://pensoft.net/" target="_blank">
+                    <img class="text" src="{{ 'assets/images/pensoft-logo.svg'|theme }}" /></a>
+                </span></div></div>
+        </div>
+
+	</div>
+</div>

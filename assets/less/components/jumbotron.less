@@ -1,0 +1,200 @@
+.jumbotron {
+    position: absolute;
+    z-index: 100;
+
+    .breakpoint-large-down({
+        padding-top: 95px;
+    });
+}
+
+.background.container{
+    background: url("../../assets/images/illustration.svg") top right no-repeat;
+    background-size: 50%;
+    padding-bottom: 100px;
+    .breakpoint-large-down({
+        background: url("../../assets/images/illustration.svg") bottom center no-repeat;
+        background-size: 100%;
+        padding-bottom: 250px;
+    });
+    .container{
+        flex-basis: 40%;
+        max-width: 40%;
+        display: inline-block;
+        .breakpoint-large-down({
+            flex-basis: 100%;
+            max-width: 100%;
+        });
+    }
+}
+
+.about{
+  .container img{
+    width: 80%;
+    float: right;
+    .breakpoint-small-down({
+      width: 100%;
+      float: none;
+    });
+  }
+}
+
+.objectives{
+    .objective_items{
+        div{
+            text-align: center;
+            margin-bottom: 50px;
+            //padding: 114px 110px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 8% 5%;
+            span{
+                position: absolute;
+                background: url("../../assets/images/blue element.svg") center no-repeat;
+                width: 87px;
+                height: 66px;
+                background-size: contain;
+                color: @white-color;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-family: Metropolis;
+                font-weight: bold;
+                font-size: 25px;
+            }
+            .breakpoint-large-down({
+                background-size: contain!important;
+                font-size: 0.9em;
+                padding: 67px 41px!important;
+                background-position-y: top!important;
+            });
+            &:nth-of-type(1){
+                background: url("../../assets/images/obj1.svg") center no-repeat;
+                background-size: 90%;
+                span{
+                    top: 30px;
+                    left: 155px;
+                    .breakpoint-large-down({
+                        left: 108px;
+                        top: -16px;
+                    });
+                }
+                .breakpoint-large-down({
+                    //background-size: contain;
+                    //padding: 70px 20px;
+                });
+            }
+            &:nth-of-type(2){
+                background: url("../../assets/images/obj2.svg") top center no-repeat;
+                background-size: 90%;
+                span{
+                    top: 14px;
+                    left: 118px;
+                    .breakpoint-large-down({
+                        left: 92px;
+                        top: 0;
+                    });
+                }
+                .breakpoint-large-down({
+                    //background-size: contain;
+                    //padding: 98px 20px;
+                });
+            }
+            &:nth-of-type(3){
+                background: url("../../assets/images/obj3.svg") center no-repeat;
+                background-size: 90%;
+                span{
+                    top: 9px;
+                    left: 185px;
+                    .breakpoint-large-down({
+                        left: 128px;
+                        top: -25px;
+                    });
+                }
+                .breakpoint-large-down({
+                    //background-size: contain;
+                    //padding: 98px 20px;
+                });
+            }
+            &:nth-of-type(4){
+                background: url("../../assets/images/obj4.svg") center no-repeat;
+                background-size: 90%;
+                span{
+                    top: 20px;
+                    left: 179px;
+                    .breakpoint-large-down({
+                        left: 133px;
+                        top: -24px;
+                    });
+                }
+                .breakpoint-large-down({
+                    //background-size: contain;
+                    //padding: 98px 20px;
+                });
+            }
+            &:nth-of-type(5){
+                background: url("../../assets/images/obj6.svg") top center no-repeat;
+                background-size: 100%;
+                padding: 6% 5%;
+                span{
+                    top: 0px;
+                    left: 136px;
+                    .breakpoint-large-down({
+                        top: -13px;
+                        left: 99px;
+                    });
+                }
+                .breakpoint-large-down({
+                    padding: 59px 27px!important;
+                });
+            }
+
+            &:nth-of-type(6){
+                background: url("../../assets/images/obj5.svg") top center no-repeat;
+                background-size: 90%;
+                span{
+                    top: 36px;
+                    left: 102px;
+                    .breakpoint-large-down({
+                        top: 18px;
+                        left: 83px;
+                    });
+                }
+                .breakpoint-large-down({
+                    padding: 105px 50px 40px 50px!important;
+                });
+            }
+        }
+    }
+}
+
+.home .background-dots{
+    background: url("../../assets/images/AdobeStock_468659932.png") center no-repeat;
+    background-size: cover;
+    h1{
+        font-size: 24px;
+        font-weight: bold!important;
+        color: @dark-color;
+        text-align: left!important;
+        margin-bottom: 20px;
+    }
+}
+.home .upcoming-events{
+    background: url("../../assets/images/upcoming-events-background.png") center no-repeat;
+    background-size: cover;
+
+}
+
+.container.work_packages{
+    margin-top: 100px;
+}
+
+.consortium{
+    h3{
+        color: #004165;
+        font-size: 24px;
+        text-transform: none;
+    }
+}
+

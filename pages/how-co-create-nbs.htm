@@ -1,0 +1,26 @@
+title = "How to co-create NBS?"
+layout = "default"
+url = "/how-co-create-nbs"
+
+[menu submenu]
+start = "id-9"
+activeNode = 0
+listItemClasses = "item"
+primaryClasses = "nav nav-pills"
+secondaryClasses = "dropdown-menu"
+numberOfLevels = 2
+
+[siteSearchInclude]
+==
+{% component 'siteSearchInclude' %}
+<div class="container first-child">
+    <div class="row between-md around-xs">
+        <div class="col-md-3 col-xs-12 left_column_content blue">
+            {% component 'submenu' %}
+        </div>
+        <div class="col-md-9 col-xs-12 right_column_content">
+            <h1 class="heading_svg">{{this.page.title}}</h1>
+            {% partial 'how_co_create' %}
+        </div>
+    </div>
+</div>
