@@ -12,15 +12,22 @@ numberOfLevels = 2
 
 [siteSearchInclude]
 ==
+<?php
+    function onStart(){
+        $this['pages'] = BenFreke\MenuManager\Models\Menu::where('parent_id', '=', '12')->get();
+}
+?>
+==
 {% component 'siteSearchInclude' %}
+<div class="left_column_content blue">
+    {% component 'submenu' %}
+</div>
 <div class="container first-child">
     <div class="row between-md around-xs">
-        <div class="col-md-3 col-xs-12 left_column_content blue">
-            {% component 'submenu' %}
-        </div>
-        <div class="col-md-9 col-xs-12 right_column_content">
+
+        <div class="col-md-12 col-xs-12 right_column_content">
             <h1 class="heading_svg">{{this.page.title}}</h1>
-            {% partial 'how_evaluate_co_creation' %}
+            {% partial 'sublevel' classname='making_the_case_partial' pages=pages %}
         </div>
     </div>
 </div>

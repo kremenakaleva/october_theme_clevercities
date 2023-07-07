@@ -14,17 +14,24 @@ templates = "template1"
 description_limit = 0
 
 ==
+<div class="left_column_content">
+    {% component 'intro' %}
+</div>
 <div class="container first-child">
         <div class="row between-md around-xs">
-            <div class="col-md-3 col-xs-12 left_column_content">
-                {% component 'intro' %}
-            </div>
-            <div class="col-md-9 col-xs-12 right_column_content">
+
+            <div class="col-md-12 col-xs-12 right_column_content">
 
             </div>
         </div>
 </div>
-<div class="homepage_map">{% partial 'homepage_guidance' %}</div>
+<div class="homepage_map">
+    {% if is_mobile %}
+        {% partial 'mobile/homepage_guidance' %}
+    {% else %}
+        {% partial 'homepage_guidance' %}
+    {% endif %}
+</div>
 
 
 

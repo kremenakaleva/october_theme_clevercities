@@ -13,19 +13,21 @@ numberOfLevels = 2
 [siteSearchInclude]
 
 [jumbotron cross]
-jumbotron = "cross-region-solution-sheet"
+jumbotron = "clever-regional-solutions-catalogues-latin-america-china-and-south-eastern-europe"
+title = 1
 background = "transperant"
 templates = "template1"
 description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
+<div class="left_column_content">
+    {% component 'submenu' %}
+</div>
 <div class="container first-child">
         <div class="row between-md around-xs">
-            <div class="col-md-3 col-xs-12 left_column_content">
-                {% component 'submenu' %}
-            </div>
-            <div class="col-md-9 col-xs-12 right_column_content">
-                <h1>{{this.page.title}}</h1>
+
+            <div class="col-md-12 col-xs-12 right_column_content">
+                <h1 class="heading">{{this.page.title}}</h1>
                 {% component 'cross' %}
             </div>
         </div>

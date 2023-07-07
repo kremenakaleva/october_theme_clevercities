@@ -1,7 +1,6 @@
-title = "Business model canvas"
-layout = "default"
 url = "/business-model-canvas"
-
+layout = "default"
+title = "Business model canvas"
 
 [menu submenu]
 start = "id-2"
@@ -13,15 +12,22 @@ numberOfLevels = 2
 
 [siteSearchInclude]
 
+[jumbotron]
+jumbotron = "business-model-canvas"
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
+<div class="left_column_content">
+    {% component 'submenu' %}
+</div>
 <div class="container first-child">
     <div class="row between-md around-xs">
-        <div class="col-md-3 col-xs-12 left_column_content">
-            {% component 'submenu' %}
-        </div>
-        <div class="col-md-9 col-xs-12 right_column_content">
-            <h1>{{this.page.title}}</h1>
+
+        <div class="col-md-12 col-xs-12 right_column_content">
+            <h1 class="heading">{{this.page.title}}</h1>
+            {% component 'jumbotron' %}
         </div>
     </div>
 </div>

@@ -12,12 +12,13 @@ showProviderBadge = 1
 noResultsMessage = "Your search returned no results."
 visitPageMessage = "Visit page"
 ==
-<div class="container" style="padding-top: 120px;">
-    <div class="row">
-        <div class="col-xs">
+<div class="left_column_content">
+</div>
+<div class="container first-child">
+    <div class="row between-md around-xs">
 
-            <h1 class="base_heading inner-page">Search results for {{ searchResults.query }}</h1>
-
+        <div class="col-md-12 col-xs-12 right_column_content novel">
+            <h1>Search results for {{ searchResults.query }}</h1>
             {% component 'searchResults' %}
         </div>
     </div>

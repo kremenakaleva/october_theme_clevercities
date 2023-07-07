@@ -6,6 +6,17 @@ description = "Default layout"
 includePageMeta = 1
 escape = 1
 ==
+<?php
+function onStart(){
+    $Agent = new \Jenssegers\Agent\Agent();
+    $this['is_mobile'] = false;
+        if ($Agent->isMobile()) {
+            $this['is_mobile'] = true;
+        }
+}
+?>
+
+==
 <!DOCTYPE html>
 <html>
 

@@ -6,46 +6,44 @@ primaryClasses = "navbar-nav"
 secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
 ==
-    <nav class="navbar" id="headernavbar">
-
-
-        <div class="brand-container">
-            <a href="{{'home'|page}}" class="navbar-brand" id="navbar-brand"
-               style="background: url('{{ this.theme.site_logo.getPath() }}') top left no-repeat;
+<nav class="navbar" id="headernavbar">
+    <div class="brand-container">
+        <a href="{{'home'|page}}" class="navbar-brand" id="navbar-brand"
+           style="background: url('{{ this.theme.site_logo.getPath() }}') top left no-repeat;
            background-size: contain;">
-            </a>
-        </div>
-        <div class="navbar-collapse collapse end-xs" id="headerNavbarNav" style="display: none;">
-            {% component 'menu' %}
-            <div id="headerNavbarLogin">
-                <ul class="navbar-nav" style="padding: 0; margin: 0;">
+        </a>
+    </div>
 
-                </ul>
-            </div>
-        </div>
-        <div id="menuToggle">
-            <input type="checkbox" />
-            <span></span>
-            <span></span>
-            <span></span>
-            {% component 'menu' %}
-        </div>
+    <div class="navbar-collapse collapse end-xs" id="headerNavbarNav" style="display: none;">
+        {% component 'menu' %}
+        <div id="headerNavbarLogin">
+            <ul class="navbar-nav" style="padding: 0; margin: 0;">
 
-        <div class="search-and-social-media hidden-xs">
-            <ul class="navbar-nav">
-                <li class="nav-item social">
-                    <a class="pr p-search middle search-btn" onclick="showSearchForm();"></a>
-                </li>
             </ul>
         </div>
-        <div id="search" class="search" style="display: none;">
-            <div class="container">
-                <div class="close-search" onclick="hideSearchForm();">X</div>
-                <form class="input-group align-items-start" action="{{ url('search')}}" method="get">
-                    <input class="form-control search_input" style="color: #000;" name="q" type="text" autocomplete="on" placeholder="Search">
-                    <button class="btn btn-link pr p-search big text-grey-search-btn" type="submit"></button>
-                </form>
-            </div>
+    </div>
+    <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        {% component 'menu' %}
+    </div>
+    <div class="search-and-social-media hidden-xs">
+        <ul class="navbar-nav">
+            <li class="nav-item social">
+                <a class="pr p-search middle search-btn" onclick="showSearchForm();"></a>
+            </li>
+        </ul>
+    </div>
+    <div id="search" class="search" style="display: none;">
+        <div class="container">
+            <div class="close-search" onclick="hideSearchForm();">X</div>
+            <form class="input-group align-items-start" action="{{ url('search')}}" method="get">
+                <input class="form-control search_input" style="color: #000;" name="q" type="text" autocomplete="on" placeholder="Search">
+                <button class="btn btn-link pr p-search big text-grey-search-btn" type="submit"></button>
+            </form>
         </div>
+    </div>
 
-    </nav>
+</nav>

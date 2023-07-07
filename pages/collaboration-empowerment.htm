@@ -1,6 +1,6 @@
 url = "/collaboration-empowerment"
 layout = "default"
-title = "Collaboration & empowerment"
+title = "Co-creation & empowerment"
 
 [siteSearchInclude]
 
@@ -13,13 +13,18 @@ secondaryClasses = "dropdown-menu"
 numberOfLevels = 1
 ==
 {% component 'siteSearchInclude' %}
+<div class="left_column_content blue">
+    {% component 'submenu' %}
+</div>
 <div class="container first-child">
         <div class="row between-md around-xs">
-            <div class="col-md-3 col-xs-12 left_column_content blue">
-                {% component 'submenu' %}
-            </div>
-            <div class="col-md-9 col-xs-12 right_column_content">
-                {% partial 'collaboration_empowerment' %}
+
+            <div class="col-md-12 col-xs-12 right_column_content">
+                {% if is_mobile %}
+                    {% partial 'mobile/collaboration_empowerment' %}
+                {% else %}
+                    {% partial 'collaboration_empowerment' %}
+                {% endif %}
             </div>
         </div>
 </div>

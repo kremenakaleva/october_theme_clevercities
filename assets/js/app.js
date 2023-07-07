@@ -2,16 +2,14 @@ var viewed = false;
 var width = $(window).width();
 
 $(document).ready(function() {
-    // $("nav").removeClass("no-transition");
-	/* MENU */
-	$('.navbar-nav').attr('id', 'menu'); // please don't remove this line
+    /* MENU */
+    $('.navbar-nav').attr('id', 'menu'); // please don't remove this line
 
-
-	var headerNavbar = $('#headerNavbar');
-	var width100 = $('.width100');
-	var innerWidth = $('body').innerWidth();
-	headerNavbar.width(innerWidth);
-	width100.width(innerWidth);
+    var headerNavbar = $('#headerNavbar');
+    var width100 = $('.width100');
+    var innerWidth = $('body').innerWidth();
+    headerNavbar.width(innerWidth);
+    width100.width(innerWidth);
 
     $('.nav-item').children("a").each(function(){
         if($(this).attr('data-toggle') == 'dropdown'){
@@ -21,25 +19,7 @@ $(document).ready(function() {
 
     $("nav").removeClass("no-transition");
 
-    $('.accordion').click(function(){
-        var toggler = $(this).next('.panel');
-        if ( toggler.is(':visible') ){
-            toggler.slideUp('slow');
-        }else{
-            toggler.slideDown('slow');
-        }
-    });
-
-    $("#filter-lessons-form").submit(function(){
-        $("input, select").each(function(index, input){
-            if($(input).val() == "") {
-                $(input).remove();
-            }
-        });
-    });
-
-
-    if (width < 800) { // mobile
+    if (width < 992) { // mobile
         $('#menuToggle input[type="checkbox"]').change(function(){
             var checked = $(this).is(":checked");
             if(checked){
@@ -61,67 +41,93 @@ $(document).ready(function() {
         });
     }
 
-    $('.dropdown a').click(function(event) {
-
-        if (location.href.indexOf("#") != -1) {
-            var link = $(this).attr('href');
-            var anchorId = link.substr(link.indexOf("#") + 1);
-            if($("#"+anchorId).length>0){
-                $('html, body').animate({
-                    scrollTop: $("#"+anchorId).offset().top - 150
-                }, 500);
-            }else{
-                // event.preventDefault();
-                $("path[title='"+anchorId.toUpperCase()+"']").addClass('active_path');
-
-                $('.accordion-border').each(function(){
-                    var title = $(this).find(".accordion-toggle .col-xs.start-xs").text().toUpperCase();
-                    var toggler = $(this).find(".accordion-toggle");
-                    if ( title.indexOf(anchorId.toUpperCase()) >= 0 && !toggler.next(".accordion-content").is(':visible') ){
-                        $('html, body').animate({
-                            scrollTop: toggler.parent().offset().top - 150
-                        }, 500);
-                        toggler.trigger( "click" );
-                        event.preventDefault();
-                    }
-                });
-            }
+    $('.accordion').click(function(){
+        var toggler = $(this).next('.panel');
+        if ( toggler.is(':visible') ){
+            toggler.slideUp('slow');
+        }else{
+            toggler.slideDown('slow');
         }
-
-
     });
 
+    $("#filter-lessons-form").submit(function(){
+        $("input, select").each(function(index, input){
+            if($(input).val() == "") {
+                $(input).remove();
+            }
+        });
+    });
 
-	onHashChange();
-	$(window).on("hashchange", function() {
-		onHashChange();
-	});
+    // $('.dropdown a').click(function(event) {
+    //
+    //     if (location.href.indexOf("#") != -1) {
+    //         var link = $(this).attr('href');
+    //         var anchorId = link.substr(link.indexOf("#") + 1);
+    //         if($("#"+anchorId).length>0){
+    //             $('html, body').animate({
+    //                 scrollTop: $("#"+anchorId).offset().top - 150
+    //             }, 500);
+    //         }else{
+    //             // event.preventDefault();
+    //             $("path[title='"+anchorId.toUpperCase()+"']").addClass('active_path');
+    //
+    //             $('.accordion-border').each(function(){
+    //                 var title = $(this).find(".accordion-toggle .col-xs.start-xs").text().toUpperCase();
+    //                 var toggler = $(this).find(".accordion-toggle");
+    //                 if ( title.indexOf(anchorId.toUpperCase()) >= 0 && !toggler.next(".accordion-content").is(':visible') ){
+    //                     $('html, body').animate({
+    //                         scrollTop: toggler.parent().offset().top - 150
+    //                     }, 500);
+    //                     toggler.trigger( "click" );
+    //                     event.preventDefault();
+    //                 }
+    //             });
+    //         }
+    //     }
+    //
+    //
+    // });
+
+
+	// onHashChange();
+	// $(window).on("hashchange", function() {
+	// 	onHashChange();
+	// });
 
 	$('.nav.nav-pills').removeAttr('id');
 
 	var count = $("h1").text().length;
 
+	$('.category_1').wrapAll('<div class="lessons_wrapper cat1"></div>')
+    $('.cat1').before('<h1 class="heading_svg lessons_cat1">Policy & planning</h1>');
+
+    $('.category_2').wrapAll('<div class="lessons_wrapper cat2"></div>')
+    $('.cat2').before('<h1 class="heading_svg lessons_cat2">Social impact</h1>');
+
+    $('.category_3').wrapAll('<div class="lessons_wrapper cat3"></div>')
+    $('.cat3').before('<h1 class="heading_svg lessons_cat3">Co-creation & empowerment</h1>');
+
 
 });
 
-function onHashChange(){
-	$("path").removeClass('active_path');
-	$(".accordion-content").hide();
-	var caseStudiesHashTitle = location.hash;
-
-	if(caseStudiesHashTitle){
-		var caseStudiesTitle = caseStudiesHashTitle.substring(1, caseStudiesHashTitle.length);
-		$("path[title='"+caseStudiesTitle.toUpperCase()+"']").addClass('active_path');
-
-		$('.pilots .accordion-border').each(function(){
-			var title = $(this).find(".accordion-toggle .col-xs.start-xs").text().toUpperCase();
-			var toggler = $(this).find(".accordion-toggle");
-			if ( title.indexOf(caseStudiesTitle.toUpperCase()) >= 0 && !toggler.next(".accordion-content").is(':visible') ){
-				toggler.trigger( "click" );
-			}
-		});
-	}
-}
+// function onHashChange(){
+// 	$("path").removeClass('active_path');
+// 	$(".accordion-content").hide();
+// 	var caseStudiesHashTitle = location.hash;
+//
+// 	if(caseStudiesHashTitle){
+// 		var caseStudiesTitle = caseStudiesHashTitle.substring(1, caseStudiesHashTitle.length);
+// 		$("path[title='"+caseStudiesTitle.toUpperCase()+"']").addClass('active_path');
+//
+// 		$('.pilots .accordion-border').each(function(){
+// 			var title = $(this).find(".accordion-toggle .col-xs.start-xs").text().toUpperCase();
+// 			var toggler = $(this).find(".accordion-toggle");
+// 			if ( title.indexOf(caseStudiesTitle.toUpperCase()) >= 0 && !toggler.next(".accordion-content").is(':visible') ){
+// 				toggler.trigger( "click" );
+// 			}
+// 		});
+// 	}
+// }
 
 
 function appendSearchAndSocialMedia(){
@@ -162,45 +168,3 @@ function hideSearchForm(){
 	$('#menu li').show();
     $('nav a').show();
 }
-
-
-
-
-function init() {
-    window.addEventListener('resize', function () {
-        if (isBreakpointLarge()) {
-            $('#card-carousel').slick('unslick');
-        } else {
-            if (typeof cardCarousel === 'function') {
-                cardCarousel({
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    autoplay: true,
-                    autoplaySpeed: 6000,
-                    prevArrow: '<i class="slick-prev pr p-back"/>',
-                    nextArrow: '<i class="slick-next pr p-forward"/>',
-                });
-             }
-        }
-        // keepFooter(documentHasScroll());
-
-    });
-    document.addEventListener('DOMContentLoaded', function () {
-        if (!isBreakpointLarge()) {
-            if (typeof cardCarousel === 'function') {
-                cardCarousel({
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    autoplay: true,
-                    autoplaySpeed: 6000,
-                    prevArrow: '<i class="slick-prev pr p-back"/>',
-                    nextArrow: '<i class="slick-next pr p-forward"/>',
-                });
-            }
-        }
-		appendSearchAndSocialMedia()
-
-    });
-}
-
-init()
