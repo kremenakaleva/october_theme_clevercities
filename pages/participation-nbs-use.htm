@@ -1,6 +1,6 @@
 url = "/participation-nbs-use"
 layout = "default"
-title = "Participation & NbS use"
+title = "Social impacts of nature-based solutions"
 
 [menu submenu]
 start = "id-6"
@@ -11,6 +11,12 @@ secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
 
 [siteSearchInclude]
+
+[jumbotron]
+jumbotron = "social-impacts-nbs"
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 <div class="left_column_content">
@@ -19,8 +25,9 @@ numberOfLevels = 2
 <div class="container first-child">
     <div class="row between-md around-xs">
 
-        <div class="col-md-12 col-xs-12 right_column_content">
-            <h1 class="heading">{{this.page.title}}</h1>
+        <div class="col-md-12 col-xs-12 right_column_content green">
+            <h1 class="heading"><img src="{{'si/18_22_social-impacts-of-NbS-overarching-icon.svg'|media}}">{{this.page.title}}</h1>
+            {% component 'jumbotron' %}
         </div>
     </div>
 </div>

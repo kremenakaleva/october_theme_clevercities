@@ -1,6 +1,6 @@
-title = "Why co-create"
+url = "/key-principles-of-co-design"
 layout = "default"
-url = "/why-co-create"
+title = "Key principles of co-design - Learnings from Co-design in London"
 
 [menu submenu]
 start = "id-9"
@@ -11,13 +11,21 @@ secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
 
 [siteSearchInclude]
+
+[jumbotron]
+jumbotron = "key-principles-community-co-design"
+title = 1
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 <div class="left_column_content blue">{% component 'submenu' %}</div>
 <div class="container first-child">
     <div class="row between-md around-xs">
         <div class="col-md-12 col-xs-12 right_column_content">
-            <h1 class="heading">{{this.page.title}}</h1>
+            <h1 class="heading"><img src="{{'cc_i/32.svg'|media}}">{{this.page.title}}</h1>
+            {% component 'jumbotron' %}
         </div>
     </div>
 </div>

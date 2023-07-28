@@ -1,6 +1,6 @@
-title = "Learning co-design for cities"
-layout = "default"
 url = "/learning-co-design-cities"
+layout = "default"
+title = "Integrated collaborative governance approaches"
 
 [menu submenu]
 start = "id-9"
@@ -11,6 +11,12 @@ secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
 
 [siteSearchInclude]
+
+[jumbotron]
+jumbotron = "integrated-collaborative-governance-approaches"
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 <div class="left_column_content blue">
@@ -20,7 +26,8 @@ numberOfLevels = 2
     <div class="row between-md around-xs">
 
         <div class="col-md-12 col-xs-12 right_column_content">
-            <h1 class="heading">{{this.page.title}}</h1>
+            <h1 class="heading"><img src="{{'cc_i/44.svg'|media}}">{{this.page.title}}</h1>
+            {% component 'jumbotron' %}
         </div>
     </div>
 </div>

@@ -1,7 +1,6 @@
-title = "Breaking silos"
+url = "/questioning-co-governance"
 layout = "default"
-url = "/breaking-silos"
-
+title = "The relationship between co-creation and co-governance"
 
 [menu submenu]
 start = "id-2"
@@ -12,6 +11,13 @@ secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
 
 [siteSearchInclude]
+
+[jumbotron]
+jumbotron = "relationship-between-co-creation-and-co-governance"
+title = 1
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 <div class="left_column_content">
@@ -20,8 +26,9 @@ numberOfLevels = 2
 <div class="container first-child">
     <div class="row between-md around-xs">
 
-        <div class="col-md-12 col-xs-12 right_column_content">
-            <h1 class="heading">{{this.page.title}}</h1>
+        <div class="col-md-12 col-xs-12 right_column_content principles pink">
+            <h1 class="heading"><img src="{{'p_p/12.svg'|media}}">{{this.page.title}}</h1>
+            {% component 'jumbotron' %}
         </div>
     </div>
 </div>

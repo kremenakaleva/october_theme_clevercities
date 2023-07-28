@@ -1,6 +1,6 @@
-title = "Evaluating co-creation process"
-layout = "default"
 url = "/evaluating-co-creation-process"
+layout = "default"
+title = "Co-creation guidance : Pathway & 16 Steps"
 
 [menu submenu]
 start = "id-9"
@@ -11,6 +11,12 @@ secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
 
 [siteSearchInclude]
+
+[jumbotron]
+jumbotron = "guidance-co-creating-nature-based-solutions"
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 <div class="left_column_content blue">
@@ -20,7 +26,8 @@ numberOfLevels = 2
     <div class="row between-md around-xs">
 
         <div class="col-md-12 col-xs-12 right_column_content">
-            <h1 class="heading">{{this.page.title}}</h1>
+            <h1 class="heading"><img src="{{'cc_i/35.svg'|media}}">{{this.page.title}}</h1>
+            {% component 'jumbotron' %}
         </div>
     </div>
 </div>

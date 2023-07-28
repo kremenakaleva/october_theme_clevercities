@@ -1,20 +1,18 @@
-title = "Social Impacts"
-layout = "default"
 url = "/social-impacts"
+layout = "default"
+title = "Social Impacts"
 
 [siteSearchInclude]
 
-[menu submenu]
-start = "id-6"
-activeNode = 0
-listItemClasses = "item"
-primaryClasses = "nav nav-pills"
-secondaryClasses = "dropdown-menu"
-numberOfLevels = 2
+[jumbotron intro]
+jumbotron = "social-impacts"
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 <div class="left_column_content">
-    {% component 'submenu' %}
+     {% component 'intro' %}
 </div>
 <div class="container first-child">
         <div class="row between-md around-xs">

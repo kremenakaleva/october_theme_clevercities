@@ -1,5 +1,5 @@
-<div class="row start-md around-xs {{classname}}">
+<div class="row center-md around-xs {{classname}} content-warpper">
     {% for page in pages %}
-    <div class="col-md-3 col-xs-12"><a href="{{page.url}}">{{page.title}}</a></div>
+    <div class="col-md-3 col-xs-12"><a href="{{page.url}}" title="{{page.title}}"><span>{{page.title}}</span></a></div>
     {% endfor %}
 </div>

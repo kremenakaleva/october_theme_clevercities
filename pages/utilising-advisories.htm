@@ -1,6 +1,6 @@
-title = "Utilising advisories"
+url = "/success-factors-of-open-urban-data-availability"
 layout = "default"
-url = "/utilising-advisories"
+title = "Success factors of open urban data availability for NbS planning, participation, and implementation"
 
 [menu submenu]
 start = "id-9"
@@ -11,6 +11,13 @@ secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
 
 [siteSearchInclude]
+
+[jumbotron]
+jumbotron = "success-factors-open-urban-data-availability-nbs-planning-participation-and-implementation"
+title = 0
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 <div class="left_column_content blue">
@@ -20,7 +27,8 @@ numberOfLevels = 2
     <div class="row between-md around-xs">
 
         <div class="col-md-12 col-xs-12 right_column_content">
-            <h1 class="heading">{{this.page.title}}</h1>
+            <h1 class="heading"><img src="{{'cc_i/36.svg'|media}}">{{this.page.title}}</h1>
+            {% component 'jumbotron' %}
         </div>
     </div>
 </div>

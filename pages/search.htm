@@ -1,6 +1,6 @@
-title = "Search"
 url = "/search"
 layout = "default"
+title = "Search"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
@@ -11,13 +11,14 @@ resultsPerPage = 30
 showProviderBadge = 1
 noResultsMessage = "Your search returned no results."
 visitPageMessage = "Visit page"
+minQueryLength = 0
 ==
 <div class="left_column_content">
 </div>
 <div class="container first-child">
     <div class="row between-md around-xs">
 
-        <div class="col-md-12 col-xs-12 right_column_content novel">
+        <div class="col-md-12 col-xs-12 right_column_content search_result">
             <h1>Search results for {{ searchResults.query }}</h1>
             {% component 'searchResults' %}
         </div>

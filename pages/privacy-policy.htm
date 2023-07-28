@@ -1,14 +1,14 @@
 url = "/privacy-policy"
 layout = "default"
-title = "Privacy policy"
+title = "Data protection"
 is_hidden = 0
 robot_index = "index"
 robot_follow = "follow"
 
 [siteSearchInclude]
 
-[jumbotron privacy-policy]
-jumbotron = "privacy-policy"
+[jumbotron privacy_policy]
+jumbotron = "data-protection"
 title = 0
 background = "transperant"
 templates = "template1"
@@ -22,8 +22,8 @@ description_limit = 0
     <div class="row between-md around-xs">
 
         <div class="col-md-12 col-xs-12 right_column_content">
-            <h1 class="heading">{{this.page.title}}</h1>
-            {% component 'privacy-policy' %}
+            <h1 class="heading"><img src="{{'header_icons/header_icon.jpg'|media}}">{{this.page.title}}</h1>
+            {% component 'privacy_policy' %}
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
-title = "Communicating target groups"
-layout = "default"
 url = "/communicating-target-groups"
+layout = "default"
+title = "Reaching out to stakeholders and sustaining community relationships"
 
 [menu submenu]
 start = "id-9"
@@ -11,6 +11,12 @@ secondaryClasses = "dropdown-menu"
 numberOfLevels = 2
 
 [siteSearchInclude]
+
+[jumbotron]
+jumbotron = "reaching-out-stakeholders-and-sustaining-community-relationships"
+background = "transperant"
+templates = "template1"
+description_limit = 0
 ==
 {% component 'siteSearchInclude' %}
 <div class="left_column_content blue">
@@ -20,7 +26,8 @@ numberOfLevels = 2
     <div class="row between-md around-xs">
 
         <div class="col-md-12 col-xs-12 right_column_content">
-            <h1 class="heading">{{this.page.title}}</h1>
+            <h1 class="heading"><img src="{{'cc_i/39.svg'|media}}">{{this.page.title}}</h1>
+            {% component 'jumbotron' %}
         </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
-title = "Collaborations across disciplines and departments"
-layout = "default"
 url = "/collaborations-across-disciplines-and-departments"
+layout = "default"
+title = "Collaborations across disciplines and departments"
 
 [menu submenu]
 start = "id-2"
@@ -13,7 +13,7 @@ numberOfLevels = 2
 [siteSearchInclude]
 ==
 <?php
-    function onStart(){
+function onStart(){
         $this['pages'] = BenFreke\MenuManager\Models\Menu::where('parent_id', '=', '4')->get();
 }
 ?>
@@ -25,7 +25,7 @@ numberOfLevels = 2
 <div class="container first-child">
         <div class="row between-md around-xs">
 
-            <div class="col-md-12 col-xs-12 right_column_content">
+            <div class="col-md-12 col-xs-12 right_column_content content-warpper">
                 <h1 class="heading_svg">{{this.page.title}}</h1>
                 {% partial 'sublevel' classname='making_the_case_partial' pages=pages %}
             </div>
