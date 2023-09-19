@@ -56,13 +56,13 @@ $(document).ready(function() {
         }
     });
 
-    $("#filter-lessons-form").submit(function(){
-        $("input, select").each(function(index, input){
-            if($(input).val() == "") {
-                // $(input).remove();
-            }
-        });
-    });
+    // $("#filter-lessons-form").submit(function(){
+    //     $("input, select").each(function(index, input){
+    //         if($(input).val() == "") {
+    //             // $(input).remove();
+    //         }
+    //     });
+    // });
 
      $('body').on('click', '.text-wrapper .accordion-toggle', function () {
         if ($(this).next(".accordion-content").is(':visible')) {
@@ -78,14 +78,14 @@ $(document).ready(function() {
 
 	var count = $("h1").text().length;
 
-	$('.category_1').wrapAll('<div class="lessons_wrapper cat1"></div>')
-    $('.cat1').before('<h1 class="heading_svg lessons_cat1">Policy & planning</h1>');
+	// $('.category_1').wrapAll('<div class="lessons_wrapper cat1"></div>')
+    // $('.cat1').before('<h1 class="heading_svg lessons_cat1">Policy & planning</h1>');
 
-    $('.category_2').wrapAll('<div class="lessons_wrapper cat2"></div>')
-    $('.cat2').before('<h1 class="heading_svg lessons_cat2">Social impact</h1>');
+    // $('.category_2').wrapAll('<div class="lessons_wrapper cat2"></div>')
+    // $('.cat2').before('<h1 class="heading_svg lessons_cat2">Social impact</h1>');
 
-    $('.category_3').wrapAll('<div class="lessons_wrapper cat3"></div>')
-    $('.cat3').before('<h1 class="heading_svg lessons_cat3">Co-creation & empowerment</h1>');
+    // $('.category_3').wrapAll('<div class="lessons_wrapper cat3"></div>')
+    // $('.cat3').before('<h1 class="heading_svg lessons_cat3">Co-creation & empowerment</h1>');
 
 
 });
@@ -146,4 +146,11 @@ function hideSearchForm(){
 	$('#search').hide();
 	$('#menu li').show();
     $('nav a').show();
+}
+
+
+function filterByCategory(category){
+    $('#filter-lessons-form input:checkbox').attr('checked', false)
+    $('#category_'+category).attr('checked', true);
+    $('#filter-lessons-form').submit();
 }
