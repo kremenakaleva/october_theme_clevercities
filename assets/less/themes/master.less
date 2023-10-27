@@ -590,6 +590,7 @@ footer .align-items-center{
             padding-top: 4px;
             position: relative;
             margin: 15px 0;
+            min-height: 27px;
             a{
                 color: #000000!important;
                 font-weight: bold;
@@ -1080,6 +1081,14 @@ footer .align-items-center{
             });
         }
     }
+    
+    .select2-selection__choice__display{
+        padding-left: 5px !important;
+        .breakpoint-small-down({
+            padding-left: 3px !important;
+        });
+    }
+
     .select2-container {
         border-radius: 10px;
         background-color: white;
@@ -2949,6 +2958,9 @@ video{
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    .breakpoint-laptop-down({
+        width: 90%;
+    });
     .breakpoint-large-down({
         justify-content: center;
         align-items: center;
@@ -2972,7 +2984,7 @@ video{
         }
 
         &:nth-of-type(3){
-            background: url('../../../../storage/app/media/lessons_co-creation.svg') center no-repeat;
+            background: url('../../../../storage/app/media/lessons_co-creation_1.svg') center no-repeat;
             background-size: contain;
         }
 
