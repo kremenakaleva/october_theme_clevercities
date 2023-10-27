@@ -563,7 +563,7 @@ footer .align-items-center{
 }
 
 .left_column_content{
-    padding: 135px 5% 0px 3%!important;
+    padding: 135px 5% 16% 3%!important;
     //background: transparent linear-gradient(180deg, #edf7f1 0%, #e6f0f5 100%) 0% 0% no-repeat padding-box;
     top: 0;
     left: 0;
@@ -572,6 +572,7 @@ footer .align-items-center{
     height: fit-content;
     width: 23%;
     .breakpoint-laptop-down({
+        // margin-bottom: 0 !important;
         padding: 135px 3% 0px 3%!important;
         font-size: 16px;
         width: 25%;
@@ -1080,6 +1081,14 @@ footer .align-items-center{
             });
         }
     }
+    
+    .select2-selection__choice__display{
+        padding-left: 5px !important;
+        .breakpoint-small-down({
+            padding-left: 3px !important;
+        });
+    }
+
     .select2-container {
         border-radius: 10px;
         background-color: white;
@@ -2949,6 +2958,9 @@ video{
     align-items: center;
     width: 100%;
     justify-content: space-between;
+    .breakpoint-laptop-down({
+        width: 90%;
+    });
     .breakpoint-large-down({
         justify-content: center;
         align-items: center;
